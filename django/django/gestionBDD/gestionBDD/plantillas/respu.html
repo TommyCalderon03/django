@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>respuesta</title>
+</head>
+<body>
+
+            {% if genero == 'M' %}
+               <style>
+                   span{
+                    color: royalblue;
+                   }
+               </style>
+               <h1>Bienvenido <spam>{{nombre}}</spam></h1>
+            {% else %}
+               <style>
+                   span{
+                    color: salmon;
+                   }
+               </style>
+               <h1>Bienvenido <spam>{{nombre}}</spam></h1>
+            {% endif %}
+            <p>Utsed tiene {{edad}} años de edad le recomendamos el siguiente video</p>
+            {% if edad <= 8 %}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HBwlavV0_M4?si=ekVcNmo8hJj4Uycz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            {% endif %}
+
+            {% if edad > 8 and edad <= 20 %}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9ni54mAHdA4?si=S-rQarESpeb7f3y9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            {% endif %}
+
+            {% if edad > 20 %}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/FiLtvOsW7As?si=XWaO3MhD96L9zg8M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            {% endif %}
+            
+    
+</body>
+</html>

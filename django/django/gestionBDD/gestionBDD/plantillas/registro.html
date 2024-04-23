@@ -1,0 +1,76 @@
+<form action="/validacion/" method="post">
+    <style>
+        body{
+            background-color: rgba(158, 214, 158, 0.63);
+        }
+        div{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        input{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        label{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        table{
+            width: 40%;
+        }
+         td{
+            width: auto;
+         }
+        th{
+            width: auto;
+        }
+        tr{
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+    {% csrf_token %}
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" size="40">
+    {% if status.errorNombre %}
+     <p style="background-color: red;">{{status.errorNombre}}</p>
+    {%endif%}
+    <label for="direccion">Direccion:</label>
+    <input type="text" name="direccion" size="80">
+    {% if status.errorDireccion %}
+    <p style="background-color: red;">{{status.errorDireccion}}</p>
+    {%endif%}
+    <label for="email">Email:</label>
+    <input type="email" name="email" size="80">
+    {% if status.errorEmail %}
+     <p style="background-color: red;">{{status.errorEmail}}</p>
+    {%endif%}
+    <label for="telefono">telefono:</label>
+    <input type="number" name="telefono" size="10">
+    {% if status.errorTelefono %}
+     <p style="background-color: red;">{{status.errorTelefono}}</p>
+    {%endif%}
+    <label for="password">Contraseña:</label>
+    <input type="password" name="password" size="20">
+    {% if status.password %}
+     <p style="background-color: red;">{{status.password}}</p>
+    {%endif%}
+    <label for="passwordRep">Repita su Contraseña</label>
+    <input type="password" name="passwordRep" size="20">
+
+    <input type="submit" value="Enviar">
+    <input type="reset"  value="Borrar">
+</form>

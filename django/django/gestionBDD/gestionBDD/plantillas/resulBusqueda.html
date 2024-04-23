@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de busqueda</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: rgba(158, 214, 158, 0.63);
+        }
+        div{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        table{
+            width: 40%;
+        }
+         td{
+            width: auto;
+         }
+        th{
+            width: auto;
+        }
+        tr{
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+
+    <div>
+        <table>
+            <caption>Resultados de la busqueda</caption>
+            <thead>
+                <tr>
+                    <tr>Nombre</tr>
+                    <tr>Seccion</tr>
+                    <tr>Precio</tr>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% if estatus %}
+                    {% for re in registro %}
+                        <tr>
+                            <td>{{re.nombre}}</td>
+                            <td>{{re.seccion}}</td>
+                            <td>{{re.precio}}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+
+                    <tr>
+                         <td></td>
+                        <td> <p>Sin resultado</p></td>
+                        <td></td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</body>

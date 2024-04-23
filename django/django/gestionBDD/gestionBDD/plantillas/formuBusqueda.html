@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de busqueda</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: rgba(158, 214, 158, 0.63);
+        }
+
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        form *{
+            max-width: 20%;
+            margin: 5px;
+        }
+    </style>
+<form action="/resultado/" method="get">
+
+    <label for="producto">Introdusca el producto a buscar:</label>
+    <input type="text" name="producto" size="40">
+
+    {% if error %}
+    <p style="background-color: red;"> El nombre buscado debe tener menos de 20 letras</p>
+    {% endif %}
+
+    <label for="seccion">Indiqe la seccion que desea buscar</label>
+
+    <select name="seccion">
+
+        <option value="todos">Todas</option>
+
+        {% for sec in articulo %}
+        <option value={{sec}}>{{sec|upper}}</option>
+
+        {% endfor %}
+
+    </select>
+
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Borrar">
+</form>
+</body>
+</html>

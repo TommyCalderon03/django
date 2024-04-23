@@ -1,0 +1,17 @@
+<body>
+    {% include "cabecera.html" %}
+    <h1>Mi lista de tareas</h1>
+    <ol>
+        {% for tarea in listado %}
+            {% if tarea != 'Aprender Django' %}
+
+                <li> {{tarea}} </li>
+            
+            {% else %}
+
+                <li style="color: red; font-size: 25px;"> {{tarea}} {{tarea|wordcount}} </li>
+            
+            {% endif %}
+        {% endfor %}
+    </ol>
+</body>

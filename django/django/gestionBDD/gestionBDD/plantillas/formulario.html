@@ -1,0 +1,31 @@
+<body>
+    <style>
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        form *{
+
+            max-width: 20%;
+            margin: 5px;
+        }
+    </style>
+<form action="/respuesta/" method="get">
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" size="40">
+
+    <label for="nacimiento">Fecha de nacimiento</label>
+    <input type="date" name="nacimiento">
+
+    <label for="genero">Masculino</label>
+    <input type="radio" name="genero" value="M">
+    <label for="genero">Femenino</label>
+    <input type="radio" name="genero" value="F">
+
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Borrar">
+</form>
+</body>

@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <title>{% block title %}       {% endblock %}</title>
+</head>
+<body>
+    {% include "cabecera.html" %}
+    <section>
+        <h1>Tutubo</h1>
+        <h2>videos variados</h2>
+        <p>Usted esta viendo este video a la fecha {{fecha}}</p>
+        
+        {% block content %}
+
+        {% endblock %}
+    </section>
+    {% include "footer.html" %}
+</body>
+</html>
